@@ -3,11 +3,15 @@ var Nav = require('Nav');
 
 var Main = (props) => {
     return(
-        <dir>
-            <Nav/>
-            <h1>Main Component</h1>
-            {props.children}
-        </dir> 
+        <div>
+            <Nav />
+        <div className="row">
+        <div className="columns medium-6 large-4 small-centered">     
+                {props.children}
+            </div>
+        </div> 
+        </div>
+
     )
 }
 

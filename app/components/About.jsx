@@ -2,7 +2,13 @@ var React = require('react');
 
 var About = (props) => {
     return (
-        <h3>About Component</h3>
+        <div>
+        <h1 className="text-center">About</h1>
+                <p>
+                    This app was created using React, Node.js, Express for a simple server. It also utilizes the <a href="https://openweathermap.org/" target="_blank">openweathermap.org </a>API
+                </p>
+        </div>
+       
     )
 }
 
