@@ -1,0 +1,9 @@
+$large-space: 50px;
+
+.weather-title {
+    padding-top: $large-space;
+    padding-bottom: $large-space;
+}
+input[type=search]{
+    box-shadow: none;
+}
