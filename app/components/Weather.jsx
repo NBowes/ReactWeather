@@ -17,9 +17,12 @@ var Weather = React.createClass({
             errorMessage: undefined
         });
 
-        openWeatherMap.getTemp(location).then(function (main) {
+        openWeatherMap.getTemp(location).then(function (data) {
+            var main = data.main
+            var weather = data.weather
             that.setState({
               location: location,
+              description: weather[0].description,
               temp: main.temp,
               min: main.temp_min,
               max: main.temp_max,
@@ -49,12 +52,12 @@ var Weather = React.createClass({
         }
     },
     render: function(){
-        var {isLoading, temp, location, errorMessage, min, max} = this.state;
+        var {isLoading, temp, location, errorMessage, min, max, description} = this.state;
         function renderMessage(){
             if(isLoading){
                 return <p className="text-center">Fetching weather...</p>
             } else if (temp && location){
-                return <WeatherMessage location={location} temp={temp} min={min} max={max}/>
+                return <WeatherMessage location={location} temp={temp} min={min} max={max} description={description}/>
             }
         }
         function renderError(){
